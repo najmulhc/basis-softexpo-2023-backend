@@ -2,10 +2,10 @@ const express = require("express");
 const cors = require("cors");
 const mongoose = require("mongoose");
 const app = express();
-
+const companyRouter = require("./routers/companyRouter")
 app.use(cors());
 app.use(express.json());
-
+app.use("/api/organizations", companyRouter)
 
 const MONGODB_CONNECTION__STRING =
   "mongodb+srv://admin:admin@user-cluster.ioias8a.mongodb.net/?retryWrites=true&w=majority";
